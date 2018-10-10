@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
+import Ola from './Ola'
+
 class App extends Component {
   render() {
     return (
@@ -20,7 +22,8 @@ class App extends Component {
             Learn React
           </a>
         </header>
-        <p>Testee do React....</p>
+        <p>OI pessoal..vamos aprender React....</p>
+        <Ola name='tulio' />
       </div>
     );
   }
