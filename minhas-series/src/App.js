@@ -1,7 +1,40 @@
 import React, { Component } from 'react';
+import api from './Api';
+
+import {
+  BrowserRouter as Router,
+  Route
+} from 'react-router-dom'
 
 
 class App extends Component {
+  constructor(props){
+    super(props);
+    this.state = { 
+      genres: [],
+      isLoading: false
+    };
+  }
+
+  componentDidMount(){
+   this.setState({isLoading: true});
+   api.loadGenres()
+    .then( (res) => {
+      this.setState({
+        isLoading: false,
+        genres: res.data
+      })
+
+    } );
+  }
+
+  renderGenreLink(genre){
+    return(
+      <span>&nbsp;<a href>{genre}</a>&nbsp;</span>
+    )
+
+  }
+
   render() {
     return (
       <div>
@@ -34,6 +67,21 @@ class App extends Component {
                 </div>
               </div>
             </div>
+          </section>
+
+          <section>
+            {
+              this.isLoading &&
+              <span>Aguarde carregando...</span>
+            }
+            { !this.isLoading &&
+             <div>
+               Ver séries do gênero:
+               {this.state.genres.map(this.renderGenreLink)}
+             </div>  
+            }   
+
+
           </section>
   </div>
     );
