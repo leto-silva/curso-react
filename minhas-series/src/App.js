@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
-import api from './Api';
 
 import {
   BrowserRouter as Router,
   Route
 } from 'react-router-dom'
 
+import api from './Api';
+import Home from './Home';
 
 class App extends Component {
   constructor(props){
@@ -37,6 +38,7 @@ class App extends Component {
 
   render() {
     return (
+      <Router>
       <div>
           <nav className="navbar navbar-default navbar-fixed-top" role="navigation">
             <div className="container">
@@ -56,34 +58,10 @@ class App extends Component {
 
             </div>
           </nav>
-
-
-          <section id="intro" className="intro-section">
-            <div className="container">
-              <div className="row">
-                <div className="col-lg-12">
-                  <h1><img src="images/logo.png" /></h1>
-                  <p>Nunca mais esqueça uma série que você assistiu ou que alguém lhe indicou.</p>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          <section>
-            {
-              this.isLoading &&
-              <span>Aguarde carregando...</span>
-            }
-            { !this.isLoading &&
-             <div>
-               Ver séries do gênero:
-               {this.state.genres.map(this.renderGenreLink)}
-             </div>  
-            }   
-
-
-          </section>
+          
   </div>
+  < Home/>
+  </Router>
     );
   }
 }
