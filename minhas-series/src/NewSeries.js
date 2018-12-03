@@ -55,6 +55,7 @@ class NewSeries extends Component {
                         .map( key => <option key={key} value={key}>{key} </option>)}
                 </select> <br />           
                 Comentários: <textarea className='form-control'></textarea><br />
+                <button>Salvar</button>
             </form>
             
             
