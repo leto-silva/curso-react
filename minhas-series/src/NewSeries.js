@@ -47,7 +47,8 @@ class NewSeries extends Component {
         genero: this.refs.genero.value,
         comments: this.refs.comments.value    
       }
-      api.saveSeries(newSeries).then( (res)=>console.log(res))
+      api.saveSeries(newSeries)
+        .then( (res)=>console.log(res))
     }  
       
     render() {

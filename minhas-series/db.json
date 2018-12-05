@@ -38,6 +38,13 @@
       "genero": "Comédia",
       "comments": "ssssd",
       "id": 7
+    },
+    {
+      "name": "fff",
+      "status": "Watching",
+      "genero": "Drama",
+      "comments": "fzfasf",
+      "id": 8
     }
   ],
   "genres": [

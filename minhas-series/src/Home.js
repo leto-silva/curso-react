@@ -1,7 +1,36 @@
 import React, { Component} from 'react';
+import { Link } from 'react-router-dom';
 
+import api from './Api';
 
 class Home extends Component {
+    constructor(props){
+        super(props);
+        this.state = { 
+          genres: [],
+          isLoading: false
+        };
+
+    }
+    
+      componentDidMount(){
+       this.setState({isLoading: true});
+       api.loadGenres()
+        .then( (res) => {
+          this.setState({
+            isLoading: false,
+            genres: res.data
+          })
+    
+        } );
+      }
+    
+      renderGenreLink(genre){
+        return(
+          <span key={genre}>&nbsp; <Link to={`/Series/${genre}`}>{genre}</Link>&nbsp;</span>
+        )
+    
+      }
     
     render() {
       return(
@@ -19,15 +48,15 @@ class Home extends Component {
             
             <section>
             { 
-                //this.state.isLoading &&
-                //<span>Aguarde, carregando...</span>
+                this.state.isLoading &&
+                <span>Aguarde, carregando...</span>
             }
             {
-                //!this.state.isLoading &&
-                //<div>
-                //Ver Séries do Gênero
-                //{/*this.state.genres.map(this.renderGenreLink)*/}
-                //</div>
+                !this.state.isLoading &&
+                <div>
+                 Ver Séries do Gênero: 
+                {this.state.genres.map(this.renderGenreLink)}
+                </div>
 
             }
             </section>
