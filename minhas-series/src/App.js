@@ -2,40 +2,17 @@ import React, { Component } from 'react';
 
 import {
   BrowserRouter as Router,
-  Route
+  Route,
+  Link
 } from 'react-router-dom'
 
-import api from './Api';
 import Home from './Home';
+import NewSeries from './NewSeries';
+
+const About = () => <section className="intro-section"><h1>Sobre</h1></section>
 
 class App extends Component {
-  constructor(props){
-    super(props);
-    this.state = { 
-      genres: [],
-      isLoading: false
-    };
-  }
-
-  componentDidMount(){
-   this.setState({isLoading: true});
-   api.loadGenres()
-    .then( (res) => {
-      this.setState({
-        isLoading: false,
-        genres: res.data
-      })
-
-    } );
-  }
-
-  renderGenreLink(genre){
-    return(
-      <span>&nbsp;<a href>{genre}</a>&nbsp;</span>
-    )
-
-  }
-
+ 
   render() {
     return (
       <Router>
@@ -51,16 +28,23 @@ class App extends Component {
               <div className="collapse navbar-collapse navbar-ex1-collapse">
                 <ul className="nav navbar-nav">
                   <li>
-                    <a href="">Menu item</a>
+                    <Link to="/">Home</Link>
+                  </li>
+                  <li>
+                    <Link to="/New">Nova Série</Link>
+                  </li>
+                  <li>
+                    <Link to="/About">Sobre</Link>
                   </li>
                 </ul>
               </div>
 
             </div>
           </nav>
-          
-  </div>
-  < Home/>
+        <Route exact path='/' component={Home} />
+        <Route exact path='/about' component={About} />
+        <Route exact path='/New' component={NewSeries} />
+       </div>     
   </Router>
     );
   }
