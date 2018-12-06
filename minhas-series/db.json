@@ -3,14 +3,14 @@
     {
       "id": 1,
       "name": "How I met your mother",
-      "status": "watched",
+      "status": "Watched",
       "genre": "Comédia",
       "comments": "Muito bom"
     },
     {
       "id": 2,
       "name": "Friends",
-      "status": "watching",
+      "status": "Watching",
       "genre": "Comédia",
       "current": {
         "episode": "01",
@@ -21,7 +21,7 @@
     {
       "id": 3,
       "name": "Breaking Bad",
-      "status": "watched",
+      "status": "Watched",
       "genre": "Drama",
       "comments": "Say My Name - melhor cena"
     },
@@ -35,16 +35,24 @@
     {
       "name": "teste",
       "status": "Watched",
-      "genero": "Comédia",
+      "genre": "Comédia",
       "comments": "ssssd",
       "id": 7
     },
     {
       "name": "fff",
       "status": "Watching",
-      "genero": "Drama",
+      "genre": "Drama",
       "comments": "fzfasf",
       "id": 8
+    },
+
+    { 
+      "name": "A chupeta",
+      "status": "Watching",
+      "genre": "Ação",
+      "comments": "fzfasf",
+      "id": 9
     }
   ],
   "genres": [
