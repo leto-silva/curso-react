@@ -11,13 +11,14 @@ const statuses = {
 }
 
 
-class NewSeries extends Component {
+class EditSeries extends Component {
     constructor(props){
         super(props);
         this.state = { 
           genres: [],
           isLoading: false,
-          redirect: false
+          redirect: false,
+          series: {}
         };
 
         this.saveSeries = this.saveSeries.bind(this);
@@ -25,6 +26,10 @@ class NewSeries extends Component {
     
       componentDidMount(){
        this.setState({isLoading: true});
+       api.loadSeriesById(this.props.match.params.id)
+        .then((res) => this.setState({series: res.data})
+        )
+
        api.loadGenres()
         .then( (res) => {
           this.setState({
@@ -66,9 +71,9 @@ class NewSeries extends Component {
              < Redirect to = {this.state.redirect} />}
             }
 
-            <h1>Nova Série</h1>
+            <h1>Editar Série</h1>
             <form>
-                Nome:< input type='Text' ref='name' className='form-control'></input><br />
+                Nome:< input type='Text' ref='name' defaultvalue={this.state.series.name} className='form-control'></input><br />
                 Status:
                 <select ref='status'>
                     { Object.keys(statuses)
@@ -94,4 +99,4 @@ class NewSeries extends Component {
 
 }
 
-export default NewSeries
+export default EditSeries

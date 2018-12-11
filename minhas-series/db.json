@@ -1,43 +1,11 @@
 {
   "series": [
     {
-      "id": 1,
-      "name": "How I met your mother",
-      "status": "Watched",
-      "genre": "Comédia",
-      "comments": "Muito bom"
-    },
-    {
-      "id": 2,
-      "name": "Friends",
-      "status": "Watching",
-      "genre": "Comédia",
-      "current": {
-        "episode": "01",
-        "season": "09"
-      },
-      "comments": "Bom para descontrair"
-    },
-    {
       "id": 3,
       "name": "Breaking Bad",
       "status": "Watched",
       "genre": "Drama",
       "comments": "Say My Name - melhor cena"
-    },
-    {
-      "id": 4,
-      "name": "Better Call Saul",
-      "status": "toWatch",
-      "genre": "Drama",
-      "comments": "Galera fala bem"
-    },
-    {
-      "name": "teste",
-      "status": "Watched",
-      "genre": "Comédia",
-      "comments": "ssssd",
-      "id": 7
     },
     {
       "name": "fff",
@@ -46,13 +14,47 @@
       "comments": "fzfasf",
       "id": 8
     },
-
-    { 
-      "name": "A chupeta",
+    {
+      "name": "teste",
+      "status": "Watched",
+      "genero": "Drama",
+      "comments": "vai la que dá",
+      "id": 10
+    },
+    {
+      "name": "sas",
+      "status": "Watched",
+      "genero": "Ação",
+      "comments": "sssdfsadfsdf",
+      "id": 11
+    },
+    {
+      "name": "com calma",
+      "status": "Watched",
+      "genero": "Comédia",
+      "comments": "teset",
+      "id": 12
+    },
+    {
+      "name": "kkkk",
+      "status": "Watched",
+      "genero": "Comédia",
+      "comments": "kkkkk",
+      "id": 13
+    },
+    {
+      "name": "xuxu",
       "status": "Watching",
-      "genre": "Ação",
-      "comments": "fzfasf",
-      "id": 9
+      "genero": "Comédia",
+      "comments": "dddd",
+      "id": 14
+    },
+    {
+      "name": "tttt",
+      "status": "Watched",
+      "genero": "Ação",
+      "comments": "adfsdf",
+      "id": 15
     }
   ],
   "genres": [
